@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane fx:id="mainPane" maxHeight="-Infinity" styleClass="root" fx:controller="sample.Controller" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="634.0" prefWidth="301.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" stylesheets="sample/css/style.css">
+    <top>
+        <BorderPane  fx:id="topPane" styleClass="top" BorderPane.alignment="CENTER">
+            <top>
+                <BorderPane>
+                    <left>
+                        <Pane>
+                            <Label text="" textFill="WHITE" styleClass="fio" />
+                        </Pane>
+                    </left>
+                    <right>
+                        <FlowPane alignment="CENTER_RIGHT" rowValignment="TOP" BorderPane.alignment="CENTER">
+                            <children>
+                                <Button mnemonicParsing="false" visible="false" styleClass="search-btn, icon-glass" text="" fx:id="searchBtn" />
+                                <Button mnemonicParsing="false" styleClass="filter-btn" text="" fx:id="filterBtn">
+                                    <FlowPane.margin>
+                                        <Insets left="5.0" />
+                                    </FlowPane.margin>
+                                </Button>
+                                <Button mnemonicParsing="false" styleClass="reload-btn" text="" fx:id="reloadBtn">
+                                    <FlowPane.margin>
+                                        <Insets left="5.0" />
+                                    </FlowPane.margin>
+                                </Button>
+                                <Button mnemonicParsing="false" styleClass="settings-btn" text="" fx:id="settingsBtn">
+                                    <FlowPane.margin>
+                                        <Insets left="5.0" />
+                                    </FlowPane.margin>
+                                </Button>
+                            </children>
+                        </FlowPane>
+                    </right>
+                </BorderPane>
+            </top>
+            <bottom>
+                <VBox>
+                    <!--<TextField></TextField>-->
+                    <VBox styleClass="filter-pane" fx:id="filterPane" visible="false">
+                        <Label text="Project:" />
+                        <ComboBox fx:id="filterProject" prefWidth="200.0">
+                            <VBox.margin>
+                                <Insets top="5.0" bottom="10.0" />
+                            </VBox.margin>
+                        </ComboBox>
+                        <Label text="Tracker:" layoutY="10" />
+                        <ComboBox fx:id="filterTracker" prefWidth="200.0">
+                            <VBox.margin>
+                                <Insets top="5.0" bottom="10.0" />
+                            </VBox.margin>
+                        </ComboBox>
+                        <Label text="Status:" />
+                        <ComboBox fx:id="filterStatus" prefWidth="200.0">
+                            <VBox.margin>
+                                <Insets top="5.0" bottom="10.0" />
+                            </VBox.margin>
+                        </ComboBox>
+                        <Label text="Priority:" />
+                        <ComboBox fx:id="filterPriority" prefWidth="200.0">
+                            <VBox.margin>
+                                <Insets top="5.0" bottom="10.0" />
+                            </VBox.margin>
+                        </ComboBox>
+                        <padding>
+                            <Insets left="7.0" top="10.0" />
+                        </padding>
+                        <FlowPane>
+                            <children>
+                                <Button text="Filter" styleClass="btn, primary" fx:id="filterRunBtn" />
+                                <Button text="Cancel" styleClass="btn" fx:id="filterCancelBtn" >
+                                    <FlowPane.margin>
+                                        <Insets left="10"></Insets>
+                                    </FlowPane.margin>
+                                </Button>
+                            </children>
+                        </FlowPane>
+                    </VBox>
+                </VBox>
+            </bottom>
+            <padding>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="15.0" />
+            </padding>
+        </BorderPane>
+    </top>
+    <center>
+        <ScrollPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" styleClass="scroll-pane" fx:id="scrollPane">
+            <content>
+                <VBox>
+                    <children>
+                        <BorderPane styleClass="timer-pane, pane" fx:id="timerPane">
+                            <top>
+                                <Pane BorderPane.alignment="CENTER">
+                                    <children>
+                                        <HBox BorderPane.alignment="CENTER">
+                                            <children>
+                                                <Label layoutX="14.0" layoutY="14.0" text="00:00:00" textFill="WHITE" styleClass="digit-timer" fx:id="digitTimer">
+                                                    <font>
+                                                        <Font size="36.0" />
+                                                    </font>
+                                                    <HBox.margin>
+                                                        <Insets left="7.0" top="10" />
+                                                    </HBox.margin>
+                                                </Label>
+                                                <Button mnemonicParsing="false" text="" styleClass="main-play" prefWidth="40" prefHeight="30" fx:id="stopBtn">
+                                                    <HBox.margin>
+                                                        <Insets top="16.0" left="20.0" />
+                                                    </HBox.margin>
+                                                </Button>
+                                            </children>
+                                        </HBox>
+                                    </children>
+                                </Pane>
+                            </top>
+                            <center>
+                                <Pane BorderPane.alignment="CENTER">
+                                    <children>
+                                        <BorderPane>
+                                            <top>
+                                                <VBox>
+                                                    <children>
+                                                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="" BorderPane.alignment="CENTER" styleClass="item-text" fx:id="timerTitle" />
+                                                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="" BorderPane.alignment="CENTER" styleClass="text-info" fx:id="timerInfo" />
+                                                    </children>
+                                                    <padding><Insets left="10.0" /></padding>
+                                                </VBox>
+                                            </top>
+                                        </BorderPane>
+                                    </children>
+                                </Pane>
+                            </center>
+                            <VBox.margin>
+                                <Insets bottom="20" />
+                            </VBox.margin>
+                        </BorderPane>
+                        <Pane>
+                            <VBox fx:id="items" spacing="20">
+                                <children></children>
+                            </VBox>
+                        </Pane>
+                    </children>
+                    <padding>
+                        <Insets bottom="15.0" left="15.0" right="15.0" top="10.0" />
+                    </padding>
+                </VBox>
+            </content>
+        </ScrollPane>
+    </center>
+    <bottom>
+        <FlowPane prefHeight="30" styleClass="bottom-panel" alignment="CENTER_RIGHT">
+            <!--<Label text="test" />-->
+            <ImageView layoutY="5" layoutX="15" visible="false" fx:id="loader">
+                <Image url="@img/loader.GIF" requestedHeight="20" requestedWidth="20"></Image>
+            </ImageView>
+            <padding>
+                <Insets right="10" />
+            </padding>
+        </FlowPane>
+    </bottom>
+</BorderPane>

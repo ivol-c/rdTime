@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<!--<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="root" stylesheets="@css/push.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">-->
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" styleClass="root" fx:id="container" stylesheets="/sample/css/push.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.PushController">
+   <top>
+      <VBox styleClass="task-info" BorderPane.alignment="CENTER">
+         <children>
+            <Text fill="#ebebeb" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="item-text" text="" fx:id="itemText">
+               <VBox.margin>
+                  <Insets bottom="5.0" />
+               </VBox.margin>
+            </Text>
+            <Text fill="#f0ad4e" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-info" text="" fx:id="infoText" />
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" top="10.0" />
+         </padding>
+      </VBox>
+   </top>
+   <center>
+      <VBox BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Enter log text" textFill="#fcf5f5">
+               <VBox.margin>
+                  <Insets bottom="5.0" />
+               </VBox.margin>
+            </Label>
+            <Pane>
+                <children>
+                     <TextArea prefHeight="100" prefWidth="480" fx:id="message" />
+                </children>
+            </Pane>
+            <Pane>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+               <children>
+                  <HBox alignment="TOP_RIGHT">
+                     <children>
+                        <Button mnemonicParsing="false" text="Add Log" textFill="white" styleClass="primary" fx:id="saveBtn" />
+                        <Button mnemonicParsing="false" text="Cancel" textFill="white" fx:id="cancelBtn" >
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+            </Pane>
+         </children>
+         <padding>
+            <Insets left="10.0" right="10.0" top="20.0" />
+         </padding>
+      </VBox>
+   </center>
+</BorderPane>
