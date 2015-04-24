@@ -1,5 +1,6 @@
 package sample;
 
+import com.sun.org.apache.xml.internal.security.utils.Base64;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.application.Platform;
@@ -36,8 +37,11 @@ import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
+import java.nio.charset.Charset;
 import java.util.*;
 import java.util.List;
+
+import static java.nio.charset.Charset.*;
 
 public class Controller implements Initializable{
 

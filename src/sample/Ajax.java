@@ -62,10 +62,11 @@ public class Ajax implements Runnable {
 
             if(method == "POST"){
                 http.setRequestMethod("POST");
+                http.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
                 http.setRequestProperty("Accept-Language", "en-US,en;q=0.5");
                 http.setDoOutput(true);
                 DataOutputStream wr = new DataOutputStream(http.getOutputStream());
-                wr.writeBytes(params);
+                wr.write(params.getBytes());
                 wr.flush();
                 wr.close();
             }else{
