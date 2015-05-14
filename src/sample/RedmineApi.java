@@ -37,6 +37,14 @@ public class RedmineApi
         return param;
     }
 
+    public rdParam loadCurrentUser(){
+        rdParam param = new rdParam();
+        param.url = "/users/current.json";
+        param.params = "";
+        param.method = "GET";
+        return param;
+    }
+
     public rdParam pushTime(int seconds, String issue_id, String message){
         float h = (float) seconds / 3600;
         rdParam param = new rdParam();
