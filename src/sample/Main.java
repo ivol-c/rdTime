@@ -12,6 +12,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
+
         CFactory.getInstance().setPrimaryStage(primaryStage);
         final FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("sample.fxml"));
         final Parent root = (Parent) fxmlLoader.load();

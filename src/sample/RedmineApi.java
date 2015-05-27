@@ -45,11 +45,27 @@ public class RedmineApi
         return param;
     }
 
-    public rdParam pushTime(int seconds, String issue_id, String message){
+    public rdParam loadProjectData(Object id){
+        rdParam param = new rdParam();
+        param.url = "/projects/"+id+".json";
+        param.params = "include[]=trackers";
+        param.method = "GET";
+        return param;
+    }
+
+    public rdParam timeEntryActivities(){
+        rdParam param = new rdParam();
+        param.url = "/enumerations/time_entry_activities.json";
+        param.params = "";
+        param.method = "GET";
+        return param;
+    }
+
+    public rdParam pushTime(int seconds, String issue_id, String message, String activity_id){
         float h = (float) seconds / 3600;
         rdParam param = new rdParam();
         param.url = "/time_entries.json";
-        param.params = "issue_id="+issue_id+"&time_entry[hours]="+h+"&time_entry[activity_id]=0&time_entry[comments]="+message;
+        param.params = "issue_id="+issue_id+"&time_entry[hours]="+h+"&time_entry[activity_id]="+activity_id+"&time_entry[comments]="+message;
         param.method = "POST";
         return param;
     }

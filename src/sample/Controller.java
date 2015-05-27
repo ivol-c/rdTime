@@ -32,6 +32,8 @@ import javafx.util.Duration;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
+import sample.lib.ExecuteShellComand;
+
 import java.awt.*;
 import java.io.IOException;
 import java.net.URI;
@@ -308,6 +310,7 @@ public class Controller implements Initializable{
 
             final Hyperlink showBtn = new Hyperlink();
             showBtn.getStyleClass().add("show-btn");
+            showBtn.setId("shoqBtn_" + id);
             showBtn.setLayoutX(7);
             showBtn.setText("Show");
             //showBtn.
@@ -328,10 +331,10 @@ public class Controller implements Initializable{
             showBtn.setOnAction(new EventHandler<ActionEvent>() {
                 @Override
                 public void handle(ActionEvent actionEvent) {
-                    //Button btn = (Button) actionEvent.getSource();
-                    //String[] parts = btn.getId().split("_");
-                    //String id = parts[1];
-                    String url = "http://www.google.com";
+                    Hyperlink btn = (Hyperlink) actionEvent.getSource();
+                    String[] parts = btn.getId().split("_");
+                    String id = parts[1];
+                    String url = "http://rd.groslab.com/issues/" + id;
                     openWebpage(URI.create(url));
                 }
             });
@@ -413,13 +416,13 @@ public class Controller implements Initializable{
         timer.play();
     }
 
-    public void push(String message){
+    public void push(String message, String activity_id){
         timer.stop();
         digitTimer.setText("00:00:00");
         activePane.setVisible(true);
         timerPane.setVisible(false);
 
-        activeRdParam = RedmineApi.getInstance().pushTime(seconds, (String) activeId, message);
+        activeRdParam = RedmineApi.getInstance().pushTime(seconds, (String) activeId, message, activity_id);
         seconds = 0;
         activeId = null;
 
@@ -585,13 +588,18 @@ public class Controller implements Initializable{
     }
 
     public static void openWebpage(URI uri) {
-        Desktop desktop = Desktop.isDesktopSupported() ? Desktop.getDesktop() : null;
+
+        ExecuteShellComand obj = new ExecuteShellComand();
+        String command = "python -mwebbrowser " + uri;
+        String output = obj.executeCommand(command);
+
+        /*Desktop desktop = Desktop.isDesktopSupported() ? Desktop.getDesktop() : null;
         if (desktop != null && desktop.isSupported(Desktop.Action.BROWSE)) {
             try {
                 desktop.browse(uri);
             } catch (Exception e) {
                 e.printStackTrace();
             }
-        }
+        }*/
     }
 }

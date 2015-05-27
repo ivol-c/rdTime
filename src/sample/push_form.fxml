@@ -37,6 +37,20 @@
                      <TextArea prefHeight="100" prefWidth="480" fx:id="message" />
                 </children>
             </Pane>
+            <Label text="Select tracker" textFill="#fcf5f5">
+               <VBox.margin>
+                  <Insets bottom="5.0" top="5.0" />
+               </VBox.margin>
+            </Label>
+            <Pane>
+               <children>
+                  <ComboBox fx:id="tracker" prefWidth="480.0">
+                     <VBox.margin>
+                        <Insets top="5.0" bottom="5.0" />
+                     </VBox.margin>
+                  </ComboBox>
+               </children>
+            </Pane>
             <Pane>
                <VBox.margin>
                   <Insets top="10.0" />

@@ -23,3 +23,12 @@
     -fx-border-width: 0;
     -fx-background-insets: 0, 0, 1, 2;
 }
+
+.combo-box {
+    -fx-background-color: white;
+    -fx-background-radius: 0;
+    -fx-background-insets: 0, 0, 0;
+}
+.combo-box .arrow, .combo-box .arrow-button{
+    -fx-background-radius: 0;
+}
