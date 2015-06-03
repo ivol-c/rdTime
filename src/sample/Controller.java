@@ -368,7 +368,7 @@ public class Controller implements Initializable{
             JSONObject priority = (JSONObject) item.get("priority");
             JSONObject project = (JSONObject) item.get("project");
             timerInfo.setText(status.get("name") +", "+ priority.get("name") +", "+ project.get("name"));
-
+            scrollPane.setVvalue(0);
 
             timer = new Timeline(new KeyFrame(Duration.seconds(1), new EventHandler<ActionEvent>() {
 

@@ -6,12 +6,13 @@
     -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.5), 10, 0, 0, 0);
 }
 .fio {
-    -fx-padding: 5px 0 0 30px;
-    -fx-background-repeat: no-repeat;
-    -fx-background-position: 5px 0;
-    -fx-background-radius: 5;
-    -fx-background-image: url("../img/user-male@2x.png");
-    -fx-background-size: 20 20;
+    -fx-padding: 5px 0 0 10px;
+    -fx-font-size: 16px; -fx-font-weight: bold;
+    /*-fx-background-repeat: no-repeat;*/
+    /*-fx-background-position: 5px 0;*/
+    /*-fx-background-radius: 5;*/
+    /*-fx-background-image: url("../img/user-male@2x.png");*/
+    /*-fx-background-size: 20 20;*/
 
 }
 .pane {

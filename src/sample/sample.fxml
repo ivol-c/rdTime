@@ -16,7 +16,8 @@
                 <BorderPane>
                     <left>
                         <Pane>
-                            <!--<Label text="" textFill="WHITE" styleClass="fio" />-->
+                            <Label text="List Of issues" textFill="WHITE" styleClass="fio"/>
+
                         </Pane>
                     </left>
                     <right>
