@@ -65,7 +65,12 @@ public class PushController implements Initializable {
         tracker.setDisable(true);
         saveBtn.setDisable(true);
 
-        itemText.setText((String) item.get("subject"));
+        String subject = (String) item.get("subject");
+        if(subject.length() <= 90){
+            itemText.setText(subject);
+        }else {
+            itemText.setText(subject.substring(0, 90) + "..");
+        }
 
         JSONObject status = (JSONObject) item.get("status");
         JSONObject priority = (JSONObject) item.get("priority");

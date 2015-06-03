@@ -27,7 +27,7 @@ public class Push extends Application {
 
         final FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("push_form.fxml"));
         final Parent root = (Parent) fxmlLoader.load();
-        final Scene scene = new Scene(root, 500, 320);
+        final Scene scene = new Scene(root, 500, 340);
 
         stage.heightProperty().addListener(new ChangeListener<Number>() {
             @Override

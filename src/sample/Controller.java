@@ -265,7 +265,7 @@ public class Controller implements Initializable{
             BorderPane bp = new BorderPane();
 
             /*text*/
-            Text subject = new Text((String) item.get("subject"));
+            Text subject = new Text((String) "#" + id + ": " + item.get("subject"));
             subject.getStyleClass().add("item-text");
             VBox tVbox = new VBox();
             tVbox.setPadding(new Insets(7, 7, 7, 7));
